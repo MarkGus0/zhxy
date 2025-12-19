@@ -1,19 +1,9 @@
 {
-  "version": "1.0",
   "name": "zhxy",
-  "type": "static",
-  "build": {
-    "assets": "out/_next/static",
-    "output": "out"
-  },
-  "routes": [
-    {
-      "src": "/_next/(.*)",
-      "dest": "/_next/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1.html"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "assets": {
+    "directory": "./out",
+    "notFoundStrategy": "404Page"
+  }
 }
