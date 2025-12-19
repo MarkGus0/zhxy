@@ -1,0 +1,305 @@
+.hero {
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 540px;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 48px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metricValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-display);
+}
+
+.metricLabel {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.visual {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Orbit System */
+.orbitSystem {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbitRing {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.05);
+}
+
+.orbitRing:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  animation: spin 30s linear infinite;
+  border-top-color: rgba(0, 229, 255, 0.3);
+}
+
+.orbitRing:nth-child(2) {
+  width: 70%;
+  height: 70%;
+  animation: spin 20s linear infinite reverse;
+  border-left-color: rgba(123, 44, 191, 0.4);
+  border-width: 2px;
+}
+
+.orbitRing:nth-child(3) {
+  width: 45%;
+  height: 45%;
+  animation: spin 15s linear infinite;
+  border: 2px dashed rgba(0, 255, 157, 0.2);
+}
+
+.core {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-strong));
+  border-radius: 50%;
+  box-shadow: 0 0 60px var(--accent-strong);
+  position: relative;
+  z-index: 10;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Cards */
+.card {
+  position: absolute;
+  background: rgba(13, 18, 30, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--accent);
+}
+
+.cardPrimary {
+  top: 15%;
+  right: 10%;
+  width: 260px;
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.cardSecondary {
+  bottom: 20%;
+  left: 5%;
+  width: 220px;
+  animation: float 7s ease-in-out infinite reverse;
+  animation-delay: 1s;
+}
+
+.cardTertiary {
+  top: 50%;
+  right: -5%;
+  padding: 12px 16px;
+  background: rgba(123, 44, 191, 0.15);
+  border-color: rgba(123, 44, 191, 0.3);
+  animation: float 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.cardText {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background: #00ff9d;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff9d;
+}
+
+.statusText {
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .visual {
+    height: 500px;
+  }
+
+  .orbitSystem {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 0 80px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .metrics {
+    width: 100%;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .visual {
+    height: 400px;
+  }
+
+  .orbitSystem {
+    width: 320px;
+    height: 320px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .cardPrimary {
+    width: 220px;
+    right: 5%;
+  }
+
+  .cardSecondary {
+    width: 180px;
+    left: 0;
+  }
+
+  .cardTertiary {
+    right: 0;
+  }
+}

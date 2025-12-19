@@ -1,0 +1,147 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-6);
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: var(--z-behind);
+}
+
+.content {
+    position: relative;
+    z-index: var(--z-base);
+    max-width: 600px;
+    width: 100%;
+}
+
+.icon {
+    color: var(--color-accent);
+    margin-bottom: var(--space-6);
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+}
+
+.message {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+}
+
+.estimate {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-8);
+}
+
+.estimateLabel {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+}
+
+.estimateTime {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-accent);
+}
+
+.contact {
+    margin-bottom: var(--space-8);
+}
+
+.contact p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+}
+
+.email {
+    font-size: var(--text-base);
+    color: var(--color-accent);
+    font-weight: var(--font-medium);
+}
+
+.email:hover {
+    text-decoration: underline;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.progressBar {
+    height: 4px;
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-warm));
+    border-radius: var(--radius-full);
+    animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(250%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.progressText {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+}
+
+/* Responsive */
+@media (max-width: 639px) {
+    .title {
+        font-size: var(--text-3xl);
+    }
+
+    .icon svg {
+        width: 60px;
+        height: 60px;
+    }
+}

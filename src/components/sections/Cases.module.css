@@ -1,0 +1,90 @@
+﻿.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 24px;
+  margin-top: 60px;
+  counter-reset: case-counter;
+}
+
+.card {
+  flex: 1;
+  padding: 32px 24px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 220px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border-top-color: var(--accent);
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Large decorative number */
+.card::before {
+  content: counter(case-counter, decimal-leading-zero);
+  counter-increment: case-counter;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-display);
+  line-height: 1;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.card:hover::before {
+  color: rgba(0, 229, 255, 0.1);
+  transform: scale(1.1);
+}
+
+
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: auto;
+  /* Push content down slightly or keep top */
+  margin-top: 10px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.cta {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.card:hover .cta {
+  opacity: 1;
+  gap: 12px;
+}
+
+/* Media query removed to enforce horizontal layout */

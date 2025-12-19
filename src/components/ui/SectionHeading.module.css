@@ -1,0 +1,64 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+.heading[data-align="center"] {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.heading[data-align="center"] .eyebrow {
+  justify-content: center;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+
+.heading[data-align="center"] .eyebrow::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(-90deg, transparent, var(--accent));
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.heading[data-align="center"] .description {
+  margin: 0 auto;
+}

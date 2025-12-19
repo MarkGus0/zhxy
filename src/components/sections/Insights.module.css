@@ -1,0 +1,129 @@
+﻿.section {
+  position: relative;
+}
+
+.list {
+  margin-top: 80px;
+  position: relative;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+}
+
+/* Timeline Line */
+.list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent) 0%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0.3;
+}
+
+.item {
+  position: relative;
+  padding: 32px 40px;
+  margin-bottom: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-areas: "date content";
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  transition: all 0.3s ease;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Dot */
+.item::before {
+  content: "";
+  position: absolute;
+  left: -45px;
+  top: 40px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(10px);
+}
+
+.item:hover::before {
+  background: var(--accent);
+  box-shadow: 0 0 20px var(--accent);
+  transform: scale(1.2);
+}
+
+.date {
+  grid-area: date;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  padding-top: 4px;
+  text-align: right;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 24px;
+}
+
+.item h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.item p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .list {
+    padding-left: 30px;
+  }
+
+  .list::before {
+    left: 0;
+  }
+
+  .item {
+    grid-template-columns: 1fr;
+    grid-template-areas: "date" "content";
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .item::before {
+    left: -36px;
+    top: 30px;
+  }
+
+  .date {
+    text-align: left;
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+  }
+}

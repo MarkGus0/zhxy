@@ -1,0 +1,156 @@
+/**
+ * Responsive Breakpoints
+ * Media query definitions for consistent responsive design
+ */
+
+/*
+ * Breakpoint Reference:
+ * xs:  0      - 479px  (extra small phones)
+ * sm:  480px  - 639px  (phones)
+ * md:  640px  - 767px  (large phones / small tablets)
+ * lg:  768px  - 1023px (tablets)
+ * xl:  1024px - 1279px (small desktops)
+ * 2xl: 1280px+         (desktops)
+ *
+ * Usage in CSS:
+ * @media (min-width: 480px) { ... }  // sm and up
+ * @media (min-width: 640px) { ... }  // md and up
+ * @media (min-width: 768px) { ... }  // lg and up
+ * @media (min-width: 1024px) { ... } // xl and up
+ * @media (min-width: 1280px) { ... } // 2xl and up
+ */
+
+/* ========================================
+ * Breakpoint-Based Container Adjustments
+ * ======================================== */
+
+/* Extra Small (xs): 0 - 479px */
+@media (max-width: 479px) {
+    :root {
+        --container: 100%;
+        --section-pad: 60px;
+    }
+}
+
+/* Small (sm): 480px - 639px */
+@media (min-width: 480px) and (max-width: 639px) {
+    :root {
+        --container: min(560px, 94vw);
+        --section-pad: 70px;
+    }
+}
+
+/* Medium (md): 640px - 767px */
+@media (min-width: 640px) and (max-width: 767px) {
+    :root {
+        --container: min(680px, 94vw);
+        --section-pad: 80px;
+    }
+}
+
+/* Large (lg): 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --container: min(920px, 94vw);
+        --section-pad: 100px;
+    }
+}
+
+/* Extra Large (xl): 1024px - 1279px */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    :root {
+        --container: min(1120px, 94vw);
+        --section-pad: 120px;
+    }
+}
+
+/* 2X Large (2xl): 1280px+ */
+@media (min-width: 1280px) {
+    :root {
+        --container: min(1280px, 94vw);
+        --section-pad: 140px;
+    }
+}
+
+/* Ultra Wide: 1536px+ */
+@media (min-width: 1536px) {
+    :root {
+        --container: min(1400px, 90vw);
+        --section-pad: 160px;
+    }
+}
+
+/* ========================================
+ * Orientation Queries
+ * ======================================== */
+@media (orientation: portrait) {
+    .landscape-only {
+        display: none !important;
+    }
+}
+
+@media (orientation: landscape) {
+    .portrait-only {
+        display: none !important;
+    }
+}
+
+/* ========================================
+ * Touch Device Optimizations
+ * ======================================== */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Increase touch targets */
+    button,
+    a,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Disable hover effects that don't work well on touch */
+    .hover-effect {
+        --hover-opacity: 1;
+        --hover-scale: 1;
+    }
+}
+
+/* ========================================
+ * Print Styles
+ * ======================================== */
+@media print {
+
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* ========================================
+ * Reduced Motion
+ * (Also defined in utilities.css for redundancy)
+ * ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

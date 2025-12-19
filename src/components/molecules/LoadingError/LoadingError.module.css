@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-4);
+}
+
+.sm {
+    padding: var(--space-6);
+}
+
+.md {
+    padding: var(--space-10);
+}
+
+.lg {
+    padding: var(--space-16);
+    min-height: 300px;
+}
+
+.icon {
+    color: var(--color-error);
+    opacity: 0.8;
+}
+
+.icon svg {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.message {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    max-width: 300px;
+    margin: 0;
+}
+
+.sm .message {
+    font-size: var(--text-sm);
+}
+
+.lg .message {
+    font-size: var(--text-lg);
+}
+
+.lg .icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.sm .icon svg {
+    width: 32px;
+    height: 32px;
+}
