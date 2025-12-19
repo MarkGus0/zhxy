@@ -1,20 +1,49 @@
 import type { Metadata } from "next";
-import { Chakra_Petch, Sora } from "next/font/google";
+import localFont from "next/font/local";
 import { OfflineIndicator } from "@/components/molecules/OfflineIndicator";
 import "./globals.css";
 
-const bodyFont = Sora({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+const bodyFont = localFont({
+  src: [
+    {
+      path: "../fonts/Sora-latin.woff2",
+      weight: "300 700",
+      style: "normal",
+    },
+  ],
   variable: "--font-body",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial", "sans-serif"],
 });
 
-const displayFont = Chakra_Petch({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const displayFont = localFont({
+  src: [
+    {
+      path: "../fonts/ChakraPetch-400-latin.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ChakraPetch-500-latin.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ChakraPetch-600-latin.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ChakraPetch-700-latin.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-display",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -66,4 +95,3 @@ export default function RootLayout({
     </html>
   );
 }
-
