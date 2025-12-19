@@ -1,0 +1,8 @@
+:HL["/_next/static/chunks/7f9f39003bd7efcf.css","style"]
+:HL["/_next/static/media/ChakraPetch_400_latin-s.p.5578218e.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/ChakraPetch_500_latin-s.p.624b2649.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/ChakraPetch_600_latin-s.p.3d4c9b79.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/ChakraPetch_700_latin-s.p.9eaa746a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/Sora_latin-s.p.d75dc2df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/chunks/f81f9afe060c661b.css","style"]
+0:{"buildId":"dRkztY-YcMWcuDObxfez7","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
