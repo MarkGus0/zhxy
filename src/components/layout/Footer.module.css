@@ -110,6 +110,13 @@
   opacity: 0.6;
 }
 
+.beian {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
 .meta a {
   color: var(--text-muted);
   transition: color 0.2s ease;

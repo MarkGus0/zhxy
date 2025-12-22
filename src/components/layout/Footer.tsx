@@ -29,9 +29,12 @@ export function Footer() {
       </div>
       <div className={styles.meta}>
         <span>© 2025 {site.fullName}</span>
+        <div className={styles.beian}>
         <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
           皖ICP备案2025106563号-1
         </a>
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=34010402704632" rel="noreferrer" target="_blank">皖公网安备34010402704632号</a>
+        </div>
         <span>All Rights Reserved.</span>
       </div>
     </footer>
